@@ -1,7 +1,7 @@
 import express from 'express';
 
 const app = express();
-app.get('/app/health', (req,res)=>{
+app.get('/api/health', (req,res)=>{
   res.status(200).json({message:"Success"})
 
 })
