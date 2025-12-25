@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import { ENV } from './config/env';
 
 const app = express();
 const __dirname = path.resolve()
