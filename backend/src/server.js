@@ -6,6 +6,9 @@ const __dirname = path.resolve()
 app.get('/api/health', (req,res)=>{
   res.status(200).json({message:"Success"})
 
-})
-app.listen(3000, ()=>console.log('Server is up and running'));
+});
+if(ENV.NODE_ENV === 'production'){
+  app.use(express.static(path.join(__dirname, '../admin/dist')))
+}
+app.listen(ENV.PORT  , ()=>console.log('Server is up and running'));
 // make app for deployment
